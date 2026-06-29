@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import Logo from "./logo";
 import { Button } from "@/components/ui/button";
 
@@ -34,13 +35,17 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost">
-            Login
-          </Button>
+          <Link href="/login">
+            <Button variant="ghost">
+              Login
+            </Button>
+          </Link>
 
-          <Button>
-            Get Started
-          </Button>
+          <Link href="/login">
+            <Button>
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

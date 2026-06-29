@@ -11,13 +11,21 @@ export default function Footer() {
           <Logo />
 
           <div className="flex gap-8 text-sm text-muted-foreground">
-            <Link href="#features">Features</Link>
-            <Link href="#how-it-works">How it Works</Link>
-            <Link href="#dashboard">Dashboard</Link>
+            <Link href="#features">
+              Features
+            </Link>
+
+            <Link href="#how-it-works">
+              How it Works
+            </Link>
+
+            <Link href="#dashboard">
+              Dashboard
+            </Link>
           </div>
 
           <p className="text-sm text-muted-foreground">
-            © 2026 DeadlineOS. Built for Vibe2Ship.
+            © 2026 DeadlineOS. All rights reserved.
           </p>
         </div>
       </Container>

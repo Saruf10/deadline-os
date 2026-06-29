@@ -2,9 +2,8 @@ import {
   Brain,
   CalendarClock,
   ClockAlert,
-  Mic,
-  Sparkles,
   ShieldCheck,
+  Sparkles,
 } from "lucide-react";
 
 import Container from "../shared/container";
@@ -12,40 +11,40 @@ import SectionTitle from "../shared/section-title";
 
 const features = [
   {
-    title: "AI Prioritization",
+    title: "AI Schedule Generator",
     description:
-      "Automatically ranks your tasks based on urgency, workload and deadlines.",
+      "Convert a natural language brain dump into an optimized daily schedule using Gemini AI.",
     icon: Brain,
   },
   {
-    title: "Smart Scheduling",
+    title: "Task Management",
     description:
-      "Creates realistic schedules around your calendar and available time.",
+      "Create, complete and organize your daily tasks with real-time synchronization.",
     icon: CalendarClock,
   },
   {
-    title: "Deadline Risk Predictor",
+    title: "AI Rescue Mode",
     description:
-      "Predicts whether you're likely to miss a deadline before it happens.",
-    icon: ClockAlert,
+      "Automatically detects overdue tasks and intelligently reschedules them.",
+    icon: ShieldCheck,
   },
   {
-    title: "AI Productivity Coach",
+    title: "Productivity Dashboard",
     description:
-      "Provides personalized suggestions throughout your day.",
+      "Track productivity score, completed tasks and upcoming work in real time.",
     icon: Sparkles,
   },
   {
-    title: "Voice Assistant",
+    title: "Smart Prioritization",
     description:
-      "Create tasks and plans instantly using natural voice commands.",
-    icon: Mic,
+      "Prioritize important work first with intelligent task organization.",
+    icon: ClockAlert,
   },
   {
-    title: "Rescue Mode",
+    title: "Powered by Gemini",
     description:
-      "When you're behind schedule, AI rebuilds your day automatically.",
-    icon: ShieldCheck,
+      "Google Gemini powers schedule generation and AI task rescue instantly.",
+    icon: Brain,
   },
 ];
 
@@ -58,15 +57,13 @@ export default function Features() {
       <Container>
 
         <SectionTitle
-          badge="✨ Powerful AI Features"
-          title="Everything You Need To Beat Deadlines"
-          subtitle="DeadlineOS combines AI planning, scheduling and productivity coaching into one intelligent workspace."
+          badge="✨ AI Features"
+          title="Everything You Need To Stay Productive"
+          subtitle="DeadlineOS combines AI scheduling, task management and intelligent planning into one modern workspace."
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
           {features.map((feature) => {
-
             const Icon = feature.icon;
 
             return (
@@ -75,23 +72,19 @@ export default function Features() {
                 className="rounded-3xl border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-
                   <Icon className="h-7 w-7 text-primary" />
-
                 </div>
 
                 <h3 className="text-xl font-semibold">
                   {feature.title}
                 </h3>
 
-                <p className="mt-4 text-muted-foreground leading-7">
+                <p className="mt-4 leading-7 text-muted-foreground">
                   {feature.description}
                 </p>
-
               </div>
             );
           })}
-
         </div>
 
       </Container>

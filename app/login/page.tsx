@@ -1,16 +1,38 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
+
 import { Button } from "@/components/ui/button";
 import { signInWithGoogle } from "@/lib/auth";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { user, loading } = useAuth();
+
+  useEffect(() => {
+    if (!loading && user) {
+      router.replace("/dashboard");
+    }
+  }, [user, loading, router]);
+
   async function handleLogin() {
     try {
       await signInWithGoogle();
+      // The useEffect above will redirect once Firebase updates the auth state.
     } catch (error) {
       console.error("Login failed:", error);
     }
+  }
+
+  if (loading) {
+    return (
+      <main className="flex min-h-screen items-center justify-center">
+        <p className="text-lg">Loading...</p>
+      </main>
+    );
   }
 
   return (

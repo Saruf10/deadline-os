@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { HERO, STATS } from "@/lib/data/landing";
 import { Button } from "@/components/ui/button";
 import Container from "../shared/container";
@@ -19,17 +21,12 @@ export default function Hero() {
             {HERO.subtitle}
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button size="lg">
-              {HERO.primaryButton}
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-            >
-              {HERO.secondaryButton}
-            </Button>
+          <div className="mt-10 flex justify-center">
+            <Link href="/login">
+              <Button size="lg">
+                {HERO.primaryButton}
+              </Button>
+            </Link>
           </div>
 
           <div className="mt-24 grid gap-8 md:grid-cols-3">
