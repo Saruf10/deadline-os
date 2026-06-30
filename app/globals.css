@@ -128,3 +128,19 @@
     @apply font-sans;
   }
 }
+.rbc-calendar {
+  background: white;
+  border-radius: 20px;
+}
+
+.rbc-toolbar {
+  margin-bottom: 20px;
+}
+
+.rbc-event {
+  border-radius: 10px;
+}
+
+.rbc-today {
+  background: rgba(59,130,246,.08);
+}

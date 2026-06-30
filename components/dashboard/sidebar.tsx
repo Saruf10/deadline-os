@@ -5,7 +5,10 @@ import { usePathname } from "next/navigation";
 
 import {
   LayoutDashboard,
+  CheckSquare,
+  Calendar,
   Brain,
+  Settings,
   LogOut,
 } from "lucide-react";
 
@@ -20,9 +23,24 @@ const links = [
     icon: LayoutDashboard,
   },
   {
+    title: "Tasks",
+    href: "/dashboard/tasks",
+    icon: CheckSquare,
+  },
+  {
+    title: "Calendar",
+    href: "/dashboard/calendar",
+    icon: Calendar,
+  },
+  {
     title: "AI Planner",
     href: "/dashboard/ai",
     icon: Brain,
+  },
+  {
+    title: "Settings",
+    href: "/dashboard/settings",
+    icon: Settings,
   },
 ];
 
@@ -31,19 +49,15 @@ export default function Sidebar() {
 
   return (
     <aside className="flex h-screen w-72 flex-col border-r bg-background">
-
       {/* Logo */}
-
       <div className="border-b p-6">
         <Logo />
       </div>
 
       {/* Navigation */}
-
       <nav className="flex-1 space-y-2 p-4">
         {links.map((link) => {
           const Icon = link.icon;
-
           const active = pathname === link.href;
 
           return (
@@ -64,7 +78,6 @@ export default function Sidebar() {
       </nav>
 
       {/* Footer */}
-
       <div className="border-t p-4">
         <Button
           variant="outline"
@@ -75,7 +88,6 @@ export default function Sidebar() {
           Logout
         </Button>
       </div>
-
     </aside>
   );
 }
